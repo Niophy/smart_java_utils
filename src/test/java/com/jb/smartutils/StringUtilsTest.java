@@ -25,4 +25,25 @@ class StringUtilsTest {
     void capitalizeFirst_capitalizesFirstLetter() {
         assertEquals("Hello", StringUtils.capitalizeFirst("hello"));
     }
+
+    @Test
+    void toSnakeCase_basicWords() {
+        assertEquals("hello_world", StringUtils.toSnakeCase("Hello World"));
+    }
+
+    @Test
+    void toSnakeCase_multipleSpaces() {
+        assertEquals("hello_world", StringUtils.toSnakeCase("  Hello   World  "));
+    }
+
+    @Test
+    void toSnakeCase_nullInput() {
+        assertNull(StringUtils.toSnakeCase(null));
+    }
+
+    @Test
+    void toSnakeCase_emptyInput() {
+        assertEquals("", StringUtils.toSnakeCase(""));
+    }
+
 }

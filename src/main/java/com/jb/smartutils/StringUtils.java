@@ -17,5 +17,19 @@ public final class StringUtils {
             return value.toUpperCase();
         }
         return value.substring(0, 1).toUpperCase() + value.substring(1);
+
     }
+
+    public static String toSnakeCase(String input) {
+        if (input == null || input.isBlank()) {
+            return input;
+        }
+
+        // replace spaces with underscore
+        String result = input.trim().toLowerCase().replaceAll("\\s+", "_");
+
+        return result;
+    }
+
+
 }
